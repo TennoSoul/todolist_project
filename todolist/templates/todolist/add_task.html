@@ -1,0 +1,17 @@
+<!-- todolist/templates/todolist/add_task.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'todolist/style.css' %}">
+</head>
+<body>
+    <h2>Add Task</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Task</button>
+    </form>
+    <a href="{% url 'task_list' %}">Back to Task List</a>
+</body>
+</html>

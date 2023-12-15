@@ -1,0 +1,17 @@
+<!-- todolist/templates/todolist/task_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'todolist/style.css' %}">
+</head>
+<body>
+    <h2>To-Do List</h2>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }} {% if task.completed %}(Completed){% endif %}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_task' %}">Add Task</a>
+</body>
+</html>
